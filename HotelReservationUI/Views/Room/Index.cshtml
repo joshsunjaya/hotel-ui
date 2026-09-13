@@ -1,0 +1,181 @@
+﻿@model List<HotelReservationUI.Models.RoomType>
+
+@{
+    ViewData["Title"] = "Rooms";
+}
+
+<section class="rooms-page">
+
+    <!-- PAGE HERO -->
+    <div class="rooms-page-hero">
+        <div class="container">
+            <div class="rooms-page-hero-content">
+
+                <span class="section-label">STAY WITH US</span>
+
+                <h1>Rooms & Suites</h1>
+
+                <p>
+                    Discover comfortable and thoughtfully designed rooms
+                    for a relaxing stay at Hotel Niagara Lawang.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ROOM LIST -->
+    <section class="room-list-section">
+
+        <div class="container">
+
+            <!-- HEADER -->
+            <div class="room-list-header">
+
+                <div>
+                    <span class="section-label">
+                        OUR ACCOMMODATION
+                    </span>
+
+                    <h2>
+                        Find Your Perfect Room
+                    </h2>
+                </div>
+
+                <!-- FILTER -->
+                <div class="room-filter">
+
+                    <select>
+                        <option value="">
+                            All Room Types
+                        </option>
+
+                        @foreach (var room in Model.Where(x => x.IsActive))
+                        {
+                            <option value="@room.Id">
+                                @room.Name
+                            </option>
+                        }
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- ROOM CARDS -->
+            <div class="room-list-grid">
+
+                @foreach (var room in Model.Where(x => x.IsActive))
+                {
+                    var imageUrl = room.Name switch
+                    {
+                        "Standard" =>
+                        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85",
+
+                        "Deluxe" =>
+                        "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
+
+                        "Suite" =>
+                        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+
+                        _ =>
+                        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85"
+                    };
+
+                    <article class="room-list-card">
+
+                        <!-- ROOM IMAGE -->
+                        <div class="room-list-image">
+
+                            <img src="@imageUrl"
+                                 alt="@room.Name" />
+
+                            <span class="room-badge">
+                                @room.Name
+                            </span>
+
+                        </div>
+
+
+                        <!-- ROOM CONTENT -->
+                        <div class="room-list-content">
+
+                            <!-- TITLE -->
+                            <div class="room-list-title">
+
+                                <h3>
+                                    @room.Name
+                                </h3>
+
+                                <span>
+                                    Up to @room.Capacity guests
+                                </span>
+
+                            </div>
+
+
+                            <!-- DESCRIPTION -->
+                            <p>
+                                @room.Description
+                            </p>
+
+
+                            <!-- FEATURES -->
+                            <div class="room-features">
+
+                                <span>
+                                    ✓ Comfortable Bed
+                                </span>
+
+                                <span>
+                                    ✓ Private Bathroom
+                                </span>
+
+                                <span>
+                                    ✓ Air Conditioning
+                                </span>
+
+                            </div>
+
+
+                            <!-- PRICE + BUTTON -->
+                            <div class="room-list-bottom">
+
+                                <div class="room-price-wrapper">
+
+                                    <small>
+                                        Starting from
+                                    </small>
+
+                                    <strong>
+                                        Rp @room.BasePrice.ToString("N0")
+                                    </strong>
+
+                                    <small>
+                                        / night
+                                    </small>
+
+                                </div>
+
+
+                                <a href="#"
+                                   class="room-detail-btn">
+                                    View Room
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+</section>
