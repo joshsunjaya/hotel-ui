@@ -13,6 +13,10 @@
             var baseUrl = configuration["ApiSettings:BaseUrl"];
 
             _httpClient.BaseAddress = new Uri(baseUrl!);
+
+            _httpClient.DefaultRequestHeaders.UserAgent.ParseAdd(
+                "HotelReservationUI/1.0"
+            );
         }
 
         public HttpClient Client => _httpClient;
