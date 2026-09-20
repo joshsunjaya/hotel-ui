@@ -119,17 +119,12 @@
                             <!-- FEATURES -->
                             <div class="room-features">
 
-                                <span>
-                                    ✓ Comfortable Bed
-                                </span>
-
-                                <span>
-                                    ✓ Private Bathroom
-                                </span>
-
-                                <span>
-                                    ✓ Air Conditioning
-                                </span>
+                                @foreach (var feature in room.Features.Where(x => x.IsActive))
+                                {
+                                    <span>
+                                        ✓ @feature.FeatureName
+                                    </span>
+                                }
 
                             </div>
 
