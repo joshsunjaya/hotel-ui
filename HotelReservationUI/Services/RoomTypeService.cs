@@ -13,9 +13,25 @@ namespace HotelReservationUI.Services
 
         public async Task<List<RoomType>> GetAllAsync()
         {
-            var result = await _httpClient.GetFromJsonAsync<List<RoomType>>(
-                "api/RoomType/GetAll"
-            );
+            var response = await _httpClient.GetAsync("api/RoomType/GetAll");
+
+            var body = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception(
+                    $"API ERROR | Status: {(int)response.StatusCode} | Body: {body}"
+                );
+            }
+
+            var result =
+                System.Text.Json.JsonSerializer.Deserialize<List<RoomType>>(
+                    body,
+                    new System.Text.Json.JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    }
+                );
 
             return result ?? new List<RoomType>();
         }
