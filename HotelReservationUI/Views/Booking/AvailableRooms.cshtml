@@ -1,0 +1,160 @@
+﻿@model List<HotelReservationUI.Models.RoomType>
+
+@{
+    ViewData["Title"] = "Available Rooms";
+}
+
+<section class="available-rooms-page">
+
+    <!-- Hero -->
+    <section class="available-rooms-hero">
+        <div class="container">
+
+            <div class="available-rooms-hero-content">
+
+                <span class="section-label">
+                    YOUR STAY
+                </span>
+
+                <h1>
+                    Choose Your Room
+                </h1>
+
+                <p>
+                    Find a comfortable room that suits your stay
+                    at Hotel Niagara Lawang.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Rooms -->
+    <section class="available-rooms-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    AVAILABLE ROOMS
+                </span>
+
+                <h2>
+                    Select Your Room
+                </h2>
+
+                <p>
+                    Choose from our available room types.
+                </p>
+
+            </div>
+
+
+            <div class="available-rooms-grid">
+
+                @foreach (var room in Model.Where(x => x.IsActive))
+                {
+                    <div class="available-room-card">
+
+                        <!-- Image -->
+
+                        <div class="available-room-image">
+
+                            @if (!string.IsNullOrEmpty(room.ImageUrl))
+                            {
+                                <img src="@room.ImageUrl"
+                                     alt="@room.Name" />
+                            }
+                            else
+                            {
+                                <div class="available-room-no-image">
+                                    Hotel Niagara Lawang
+                                </div>
+                            }
+
+                        </div>
+
+
+                        <!-- Content -->
+
+                        <div class="available-room-content">
+
+                            <h3>
+                                @room.Name
+                            </h3>
+
+
+                            @if (!string.IsNullOrEmpty(room.Description))
+                            {
+                                <p class="available-room-description">
+                                    @room.Description
+                                </p>
+                            }
+
+
+                            <div class="available-room-info">
+
+                                <span>
+                                    Capacity: @room.Capacity Guests
+                                </span>
+
+                            </div>
+
+
+                            <!-- Features -->
+
+                            <div class="available-room-features">
+
+                                @foreach (var feature in room.Features.Where(x => x.IsActive))
+                                {
+                                    <span>
+                                        ✓ @feature.FeatureName
+                                    </span>
+                                }
+
+                            </div>
+
+
+                            <!-- Price -->
+
+                            <div class="available-room-footer">
+
+                                <div class="available-room-price">
+
+                                    <span>
+                                        Starting from
+                                    </span>
+
+                                    <strong>
+                                        Rp @room.BasePrice.ToString("N0")
+                                    </strong>
+
+                                    <small>
+                                        / night
+                                    </small>
+
+                                </div>
+
+
+                                <a href="#"
+                                   class="available-room-button">
+                                    Select Room
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>

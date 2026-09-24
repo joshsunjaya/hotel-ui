@@ -7,6 +7,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ApiService>();
+builder.Services.AddScoped<FacilityService>();
 
 var app = builder.Build();
 

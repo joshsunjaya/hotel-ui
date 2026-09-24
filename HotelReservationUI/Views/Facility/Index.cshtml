@@ -1,0 +1,91 @@
+﻿@model List<HotelReservationUI.Models.Facility>
+
+@{
+    ViewData["Title"] = "Facilities";
+}
+
+<section class="facilities-page">
+
+    <!-- Hero -->
+    <section class="facilities-hero">
+        <div class="container">
+            <div class="facilities-hero-content">
+                <span class="section-label">OUR FACILITIES</span>
+
+                <h1>
+                    Comfort & Convenience
+                    <br />
+                    <span>During Your Stay</span>
+                </h1>
+
+                <p>
+                    Enjoy a range of facilities designed to make
+                    your stay at Hotel Niagara Lawang more comfortable
+                    and memorable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Facilities -->
+    <section class="facilities-list-section">
+        <div class="container">
+
+            <div class="section-heading">
+                <span class="section-label">HOTEL FACILITIES</span>
+
+                <h2>
+                    Everything You Need
+                </h2>
+
+                <p>
+                    Explore the facilities available for our guests.
+                </p>
+            </div>
+
+
+            <div class="facilities-grid">
+
+                @foreach (var facility in Model.Where(x => x.IsActive))
+                {
+                    <div class="facility-card">
+
+                        @if (!string.IsNullOrEmpty(facility.ImageUrl))
+                        {
+                            <div class="facility-image">
+                                <img src="@facility.ImageUrl"
+                                     alt="@facility.Name" />
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="facility-image facility-no-image">
+                                <span>Hotel Niagara Lawang</span>
+                            </div>
+                        }
+
+                        <div class="facility-content">
+
+                            <h3>
+                                @facility.Name
+                            </h3>
+
+                            @if (!string.IsNullOrEmpty(facility.Description))
+                            {
+                                <p>
+                                    @facility.Description
+                                </p>
+                            }
+
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+    </section>
+
+</section>

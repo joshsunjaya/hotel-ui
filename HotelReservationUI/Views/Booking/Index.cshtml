@@ -1,0 +1,249 @@
+﻿@{
+    ViewData["Title"] = "Book Your Stay";
+}
+
+<section class="booking-page">
+
+    <!-- Hero -->
+    <section class="booking-hero">
+        <div class="container">
+
+            <div class="booking-hero-content">
+
+                <span class="section-label">
+                    RESERVATION
+                </span>
+
+                <h1>
+                    Book Your Stay
+                </h1>
+
+                <p>
+                    Choose your dates and find the perfect room
+                    for your stay at Hotel Niagara Lawang.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Booking Form -->
+    <section class="booking-section">
+
+        <div class="container">
+
+            <div class="booking-card">
+
+                <div class="booking-card-header">
+
+                    <span class="section-label">
+                        PLAN YOUR STAY
+                    </span>
+
+                    <h2>
+                        Find Your Room
+                    </h2>
+
+                    <p>
+                        Enter your stay details to check room availability.
+                    </p>
+
+                </div>
+
+
+                <form>
+
+                    <div class="booking-form-grid">
+
+                        <!-- Check In -->
+                        <div class="booking-field">
+
+                            <label for="checkIn">
+                                Check-in
+                            </label>
+
+                            <input type="date"
+                                   id="checkIn"
+                                   name="checkIn"
+                                   class="form-control" />
+
+                        </div>
+
+
+                        <!-- Check Out -->
+                        <div class="booking-field">
+
+                            <label for="checkOut">
+                                Check-out
+                            </label>
+
+                            <input type="date"
+                                   id="checkOut"
+                                   name="checkOut"
+                                   class="form-control" />
+
+                        </div>
+
+
+                        <!-- Guests -->
+                        <div class="booking-field">
+
+                            <label for="guests">
+                                Guests
+                            </label>
+
+                            <select id="guests"
+                                    name="guests"
+                                    class="form-select">
+
+                                <option value="1">
+                                    1 Guest
+                                </option>
+
+                                <option value="2" selected>
+                                    2 Guests
+                                </option>
+
+                                <option value="3">
+                                    3 Guests
+                                </option>
+
+                                <option value="4">
+                                    4 Guests
+                                </option>
+
+                                <option value="5">
+                                    5 Guests
+                                </option>
+
+                                <option value="6">
+                                    6 Guests
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-form-action">
+
+                        <button type="button"
+                                class="booking-search-button">
+                            <a asp-controller="Booking"
+                               asp-action="AvailableRooms"
+                               class="booking-search-button">
+                                Check Availability
+                            </a>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Booking Information -->
+
+            <div class="booking-info">
+
+                <div class="booking-info-item">
+
+                    <span class="booking-info-number">
+                        01
+                    </span>
+
+                    <div>
+                        <h3>
+                            Choose Your Dates
+                        </h3>
+
+                        <p>
+                            Select your check-in and check-out dates.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="booking-info-item">
+
+                    <span class="booking-info-number">
+                        02
+                    </span>
+
+                    <div>
+                        <h3>
+                            Select Your Room
+                        </h3>
+
+                        <p>
+                            Browse available rooms that match your stay.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="booking-info-item">
+
+                    <span class="booking-info-number">
+                        03
+                    </span>
+
+                    <div>
+                        <h3>
+                            Complete Your Booking
+                        </h3>
+
+                        <p>
+                            Provide your details and confirm your reservation.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Bottom CTA -->
+
+    <section class="booking-contact">
+
+        <div class="container">
+
+            <div class="booking-contact-content">
+
+                <span class="section-label">
+                    NEED ASSISTANCE?
+                </span>
+
+                <h2>
+                    Have Questions About Your Stay?
+                </h2>
+
+                <p>
+                    Contact Hotel Niagara Lawang for assistance
+                    with your reservation.
+                </p>
+
+                <a href="mailto:hotelniagara1@gmail.com"
+                   class="booking-contact-button">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>

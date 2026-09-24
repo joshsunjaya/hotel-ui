@@ -70,21 +70,16 @@
 
                 @foreach (var room in Model.Where(x => x.IsActive))
                 {
-                    var imageUrl = room.Name switch
-                    {
-                        "Standard" => "/images/rooms/standardroom.avif",
-                        "Deluxe" => "/images/rooms/deluxeroom.avif",
-                        "Suite" => "/images/rooms/suiteroom.avif",
-                        _ => "/images/rooms/standardroom.avif"
-                    };
-
                     <article class="room-list-card">
 
                         <!-- ROOM IMAGE -->
                         <div class="room-list-image">
 
-                            <img src="@imageUrl"
-                                 alt="@room.Name" />
+                            @if (!string.IsNullOrEmpty(room.ImageUrl))
+                            {
+                                <img src="@room.ImageUrl"
+                                     alt="@room.Name" />
+                            }
 
                             <span class="room-badge">
                                 @room.Name
@@ -111,9 +106,12 @@
 
 
                             <!-- DESCRIPTION -->
-                            <p>
-                                @room.Description
-                            </p>
+                            @if (!string.IsNullOrEmpty(room.Description))
+                            {
+                                <p>
+                                    @room.Description
+                                </p>
+                            }
 
 
                             <!-- FEATURES -->

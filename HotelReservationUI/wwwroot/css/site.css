@@ -668,3 +668,1326 @@ RESPONSIVE
     }
 
 }
+
+/* =========================================================
+   FACILITIES PAGE
+   ========================================================= */
+
+.facilities-page {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.facilities-hero {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient( rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45) ), url('/images/facilities/swimming-pool.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+.facilities-hero-content {
+    max-width: 700px;
+    color: #ffffff;
+    padding: 80px 0;
+}
+
+.facilities-hero .section-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.facilities-hero h1 {
+    margin: 0 0 20px;
+    font-size: 52px;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+    .facilities-hero h1 span {
+        font-weight: 400;
+    }
+
+.facilities-hero p {
+    max-width: 580px;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   FACILITIES SECTION
+   ========================================================= */
+
+.facilities-list-section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+    .section-heading .section-label {
+        display: block;
+        margin-bottom: 12px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #8a8a8a;
+    }
+
+    .section-heading h2 {
+        margin: 0 0 15px;
+        font-size: 38px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #222222;
+    }
+
+    .section-heading p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #777777;
+    }
+
+
+/* =========================================================
+   FACILITIES GRID
+   ========================================================= */
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* =========================================================
+   FACILITY CARD
+   ========================================================= */
+
+.facility-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .facility-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    }
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.facility-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+    .facility-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+.facility-card:hover .facility-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   NO IMAGE
+   ========================================================= */
+
+.facility-no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient( 135deg, #eeeeee, #f8f8f8 );
+}
+
+    .facility-no-image span {
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #999999;
+    }
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.facility-content {
+    padding: 25px 25px 28px;
+}
+
+    .facility-content h3 {
+        margin: 0 0 12px;
+        font-size: 22px;
+        font-weight: 500;
+        color: #222222;
+    }
+
+    .facility-content p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.7;
+        color: #777777;
+    }
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .facilities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .facilities-hero h1 {
+        font-size: 44px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .facilities-list-section {
+        padding: 70px 0;
+    }
+
+    .facilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facilities-hero {
+        min-height: 380px;
+    }
+
+    .facilities-hero-content {
+        padding: 60px 20px;
+    }
+
+    .facilities-hero h1 {
+        font-size: 38px;
+    }
+
+    .facilities-hero p {
+        font-size: 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .facilities-hero h1 {
+        font-size: 32px;
+    }
+
+    .facilities-list-section {
+        padding: 55px 0;
+    }
+
+    .facility-image {
+        height: 210px;
+    }
+
+    .facility-content {
+        padding: 22px;
+    }
+
+        .facility-content h3 {
+            font-size: 20px;
+        }
+}
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-hero {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: linear-gradient( rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48) ), url('/images/about/hotel-niagara.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-hero-content {
+    max-width: 720px;
+    padding: 80px 0;
+    color: #ffffff;
+}
+
+.about-hero .section-label {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.about-hero h1 {
+    margin: 0 0 20px;
+    font-size: 52px;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+    .about-hero h1 span {
+        font-weight: 400;
+    }
+
+.about-hero p {
+    max-width: 580px;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   INTRODUCTION
+   ========================================================= */
+
+.about-introduction {
+    padding: 110px 0;
+}
+
+.about-introduction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-introduction-image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+    .about-introduction-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+
+.about-introduction-content {
+    max-width: 550px;
+}
+
+    .about-introduction-content .section-label,
+    .about-location-content .section-label {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #888888;
+    }
+
+    .about-introduction-content h2,
+    .about-location-content h2 {
+        margin: 0 0 25px;
+        font-size: 40px;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #222222;
+    }
+
+    .about-introduction-content p {
+        margin: 0 0 18px;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #777777;
+    }
+
+
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+.about-experience {
+    padding: 100px 0;
+    background: #f8f7f4;
+}
+
+.about-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.about-experience-card {
+    padding: 40px 35px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .about-experience-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    }
+
+.about-experience-number {
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #999999;
+}
+
+.about-experience-card h3 {
+    margin: 0 0 15px;
+    font-size: 23px;
+    font-weight: 500;
+    color: #222222;
+}
+
+.about-experience-card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #777777;
+}
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.about-location {
+    padding: 110px 0;
+}
+
+.about-location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: stretch;
+}
+
+.about-location-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 550px;
+}
+
+    .about-location-content > p {
+        margin: 0 0 35px;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #777777;
+    }
+
+.about-location-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+    .about-location-info div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .about-location-info strong {
+        font-size: 14px;
+        color: #333333;
+    }
+
+    .about-location-info span {
+        font-size: 15px;
+        color: #777777;
+    }
+
+
+/* =========================================================
+   LOCATION MAP
+   ========================================================= */
+
+.about-location-map {
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.about-map-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient( 135deg, #eeeeee, #f8f8f8 );
+    color: #555555;
+}
+
+    .about-map-placeholder span {
+        margin-bottom: 8px;
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    .about-map-placeholder small {
+        font-size: 14px;
+        color: #888888;
+    }
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.about-cta {
+    padding: 100px 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/images/about/hotel-niagara.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+.about-cta-content {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+.about-cta .section-label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.about-cta h2 {
+    margin: 0 0 18px;
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.about-cta p {
+    max-width: 550px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-cta-button {
+    display: inline-block;
+    padding: 14px 30px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .about-cta-button:hover {
+        background: transparent;
+        color: #ffffff;
+    }
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .about-introduction-grid,
+    .about-location-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-introduction-content,
+    .about-location-content {
+        max-width: 100%;
+    }
+
+    .about-experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-hero h1 {
+        font-size: 44px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .about-hero {
+        min-height: 380px;
+    }
+
+    .about-hero-content {
+        padding: 60px 20px;
+    }
+
+    .about-hero h1 {
+        font-size: 38px;
+    }
+
+    .about-introduction,
+    .about-location {
+        padding: 70px 0;
+    }
+
+    .about-introduction-image {
+        height: 380px;
+    }
+
+    .about-introduction-content h2,
+    .about-location-content h2,
+    .about-cta h2 {
+        font-size: 32px;
+    }
+
+    .about-experience {
+        padding: 70px 0;
+    }
+
+    .about-experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-location-map {
+        min-height: 350px;
+    }
+
+    .about-map-placeholder {
+        min-height: 350px;
+    }
+
+    .about-cta {
+        padding: 70px 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .about-hero h1 {
+        font-size: 32px;
+    }
+
+    .about-hero p {
+        font-size: 15px;
+    }
+
+    .about-introduction-image {
+        height: 300px;
+    }
+
+    .about-introduction-content h2,
+    .about-location-content h2,
+    .about-cta h2 {
+        font-size: 28px;
+    }
+
+    .about-experience-card {
+        padding: 30px 25px;
+    }
+}
+
+/* =========================================================
+   BOOKING PAGE
+   ========================================================= */
+
+.booking-page {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.booking-hero {
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient( rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48) ), url('/images/about/hotel-niagara.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+.booking-hero-content {
+    max-width: 700px;
+    padding: 75px 0;
+    color: #ffffff;
+}
+
+.booking-hero .section-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.booking-hero h1 {
+    margin: 0 0 18px;
+    font-size: 50px;
+    line-height: 1.15;
+    font-weight: 500;
+}
+
+.booking-hero p {
+    max-width: 560px;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   BOOKING SECTION
+   ========================================================= */
+
+.booking-section {
+    padding: 100px 0;
+}
+
+.booking-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.06);
+}
+
+.booking-card-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+    .booking-card-header .section-label {
+        display: block;
+        margin-bottom: 12px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: #888888;
+    }
+
+    .booking-card-header h2 {
+        margin: 0 0 12px;
+        font-size: 36px;
+        font-weight: 500;
+        color: #222222;
+    }
+
+    .booking-card-header p {
+        margin: 0;
+        font-size: 15px;
+        color: #777777;
+    }
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.booking-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.booking-field label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.booking-field .form-control,
+.booking-field .form-select {
+    height: 52px;
+    padding: 0 15px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #333333;
+    box-shadow: none;
+}
+
+    .booking-field .form-control:focus,
+    .booking-field .form-select:focus {
+        border-color: #999999;
+        box-shadow: none;
+    }
+
+
+/* =========================================================
+   SEARCH BUTTON
+   ========================================================= */
+
+.booking-form-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.booking-search-button {
+    min-width: 220px;
+    padding: 14px 30px;
+    border: 1px solid #222222;
+    border-radius: 6px;
+    background: #222222;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .booking-search-button:hover {
+        background: #ffffff;
+        color: #222222;
+    }
+
+
+/* =========================================================
+   BOOKING INFORMATION
+   ========================================================= */
+
+.booking-info {
+    max-width: 1000px;
+    margin: 70px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.booking-info-item {
+    display: flex;
+    gap: 20px;
+    padding: 25px 0;
+}
+
+.booking-info-number {
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #999999;
+}
+
+.booking-info-item h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    font-weight: 500;
+    color: #222222;
+}
+
+.booking-info-item p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #777777;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.booking-contact {
+    padding: 100px 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/images/about/hotel-niagara.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+.booking-contact-content {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+.booking-contact .section-label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.booking-contact h2 {
+    margin: 0 0 18px;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.booking-contact p {
+    margin: 0 auto 30px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.booking-contact-button {
+    display: inline-block;
+    padding: 14px 30px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+    .booking-contact-button:hover {
+        background: transparent;
+        color: #ffffff;
+    }
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .booking-form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .booking-info {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-hero h1 {
+        font-size: 44px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .booking-hero {
+        min-height: 340px;
+    }
+
+    .booking-hero-content {
+        padding: 60px 20px;
+    }
+
+    .booking-hero h1 {
+        font-size: 38px;
+    }
+
+    .booking-section {
+        padding: 70px 0;
+    }
+
+    .booking-card {
+        padding: 35px 25px;
+    }
+
+    .booking-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-card-header h2 {
+        font-size: 30px;
+    }
+
+    .booking-contact {
+        padding: 70px 20px;
+    }
+
+        .booking-contact h2 {
+            font-size: 30px;
+        }
+}
+
+
+@media (max-width: 480px) {
+
+    .booking-hero h1 {
+        font-size: 32px;
+    }
+
+    .booking-card {
+        padding: 30px 20px;
+    }
+
+    .booking-search-button {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   AVAILABLE ROOMS PAGE
+   ========================================================= */
+
+.available-rooms-page {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.available-rooms-hero {
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient( rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.48) ), url('/images/about/hotel-niagara.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+.available-rooms-hero-content {
+    max-width: 700px;
+    padding: 75px 0;
+    color: #ffffff;
+}
+
+.available-rooms-hero .section-label {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.available-rooms-hero h1 {
+    margin: 0 0 18px;
+    font-size: 50px;
+    line-height: 1.15;
+    font-weight: 500;
+}
+
+.available-rooms-hero p {
+    max-width: 560px;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================================================
+   ROOM SECTION
+   ========================================================= */
+
+.available-rooms-section {
+    padding: 100px 0;
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.available-rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.available-room-card {
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .available-room-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    }
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.available-room-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+    .available-room-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+.available-room-card:hover
+.available-room-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   NO IMAGE
+   ========================================================= */
+
+.available-room-no-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #999999;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.available-room-content {
+    padding: 25px;
+}
+
+    .available-room-content h3 {
+        margin: 0 0 12px;
+        font-size: 23px;
+        font-weight: 500;
+        color: #222222;
+    }
+
+.available-room-description {
+    min-height: 52px;
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #777777;
+}
+
+
+/* =========================================================
+   INFO
+   ========================================================= */
+
+.available-room-info {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+    .available-room-info span {
+        font-size: 14px;
+        color: #666666;
+    }
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.available-room-features {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 18px 0;
+}
+
+    .available-room-features span {
+        font-size: 13px;
+        color: #666666;
+    }
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.available-room-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+.available-room-price {
+    display: flex;
+    flex-direction: column;
+}
+
+    .available-room-price span {
+        font-size: 11px;
+        color: #999999;
+    }
+
+    .available-room-price strong {
+        margin-top: 3px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #222222;
+    }
+
+    .available-room-price small {
+        font-size: 11px;
+        color: #999999;
+    }
+
+
+/* =========================================================
+   SELECT BUTTON
+   ========================================================= */
+
+.available-room-button {
+    flex-shrink: 0;
+    padding: 11px 17px;
+    border: 1px solid #222222;
+    border-radius: 5px;
+    background: #222222;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+    .available-room-button:hover {
+        background: #ffffff;
+        color: #222222;
+    }
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .available-rooms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .available-rooms-hero h1 {
+        font-size: 44px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .available-rooms-hero {
+        min-height: 340px;
+    }
+
+    .available-rooms-hero-content {
+        padding: 60px 20px;
+    }
+
+    .available-rooms-hero h1 {
+        font-size: 38px;
+    }
+
+    .available-rooms-section {
+        padding: 70px 0;
+    }
+
+    .available-rooms-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .available-rooms-hero h1 {
+        font-size: 32px;
+    }
+
+    .available-room-footer {
+        align-items: center;
+    }
+
+    .available-room-button {
+        padding: 10px 13px;
+    }
+}

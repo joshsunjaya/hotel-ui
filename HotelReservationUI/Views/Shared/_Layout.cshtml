@@ -51,20 +51,23 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link"
+                               asp-controller="Facility"
+                               asp-action="Index">
                                 Facilities
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a asp-controller="About" asp-action="Index">
                                 About
                             </a>
                         </li>
 
                         <li class="nav-item ms-lg-3">
                             <a class="nav-book"
-                               href="#">
+                               asp-controller="Booking"
+                               asp-action="Index">
                                 Book Now
                             </a>
                         </li>
@@ -133,4 +136,3 @@
 
 </body>
 </html>
-```
