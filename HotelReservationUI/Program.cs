@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<ApiService>();
 builder.Services.AddScoped<FacilityService>();
+builder.Services.AddScoped<RoomTypeService>();
 
 var app = builder.Build();
 
