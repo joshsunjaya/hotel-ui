@@ -9,6 +9,8 @@ namespace HotelReservationUI.Services
         public RoomTypeService(ApiService apiService)
         {
             _httpClient = apiService.Client;
+
+            Console.WriteLine("RoomTypeService CREATED");
         }
 
         public async Task<List<RoomType>> GetAllAsync()
