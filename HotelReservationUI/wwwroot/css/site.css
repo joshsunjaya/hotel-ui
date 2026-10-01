@@ -1991,3 +1991,32 @@ RESPONSIVE
         padding: 10px 13px;
     }
 }
+
+.booking-search-summary {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+    .booking-search-summary > div {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 14px 22px;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        background: #fff;
+        min-width: 140px;
+    }
+
+    .booking-search-summary strong {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .booking-search-summary span {
+        font-size: 15px;
+    }

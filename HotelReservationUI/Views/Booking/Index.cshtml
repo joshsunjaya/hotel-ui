@@ -4,6 +4,7 @@
 
 <section class="booking-page">
 
+    ```
     <!-- Hero -->
     <section class="booking-hero">
         <div class="container">
@@ -53,94 +54,55 @@
                 </div>
 
 
-                <form>
+                <form id="bookingForm"
+                      asp-controller="Booking"
+                      asp-action="AvailableRooms"
+                      method="get">
 
-                    <div class="booking-form-grid">
+                    <div class="row">
 
-                        <!-- Check In -->
-                        <div class="booking-field">
-
-                            <label for="checkIn">
-                                Check-in
-                            </label>
-
+                        <div class="col-md-4">
+                            <label for="checkIn">Check-in</label>
                             <input type="date"
                                    id="checkIn"
                                    name="checkIn"
-                                   class="form-control" />
-
+                                   class="form-control"
+                                   required />
                         </div>
 
-
-                        <!-- Check Out -->
-                        <div class="booking-field">
-
-                            <label for="checkOut">
-                                Check-out
-                            </label>
-
+                        <div class="col-md-4">
+                            <label for="checkOut">Check-out</label>
                             <input type="date"
                                    id="checkOut"
                                    name="checkOut"
-                                   class="form-control" />
-
+                                   class="form-control"
+                                   required />
                         </div>
 
-
-                        <!-- Guests -->
-                        <div class="booking-field">
-
-                            <label for="guests">
-                                Guests
-                            </label>
-
+                        <div class="col-md-4">
+                            <label for="guests">Guests</label>
                             <select id="guests"
                                     name="guests"
                                     class="form-select">
-
-                                <option value="1">
-                                    1 Guest
-                                </option>
-
-                                <option value="2" selected>
-                                    2 Guests
-                                </option>
-
-                                <option value="3">
-                                    3 Guests
-                                </option>
-
-                                <option value="4">
-                                    4 Guests
-                                </option>
-
-                                <option value="5">
-                                    5 Guests
-                                </option>
-
-                                <option value="6">
-                                    6 Guests
-                                </option>
-
+                                <option value="1">1 Guest</option>
+                                <option value="2" selected>2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
                             </select>
-
                         </div>
 
                     </div>
 
-
-                    <div class="booking-form-action">
-
-                        <button type="button"
-                                class="booking-search-button">
-                            <a asp-controller="Booking"
-                               asp-action="AvailableRooms"
-                               class="booking-search-button">
-                                Check Availability
-                            </a>
-                        </button>
-
+                    <div id="bookingError"
+                         class="text-danger mt-3">
                     </div>
+
+                    <button type="submit"
+                            class="booking-search-button">
+                        Check Availability
+                    </button>
 
                 </form>
 
@@ -245,5 +207,78 @@
         </div>
 
     </section>
+    ```
 
 </section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const checkIn = document.getElementById("checkIn");
+        const checkOut = document.getElementById("checkOut");
+        const form = document.getElementById("bookingForm");
+        const error = document.getElementById("bookingError");
+
+        const today = new Date();
+
+        const localToday = [
+            today.getFullYear(),
+            String(today.getMonth() + 1).padStart(2, "0"),
+            String(today.getDate()).padStart(2, "0")
+        ].join("-");
+
+        // Minimum date = today
+        checkIn.min = localToday;
+        checkOut.min = localToday;
+
+
+        // Check-out must be after check-in
+        checkIn.addEventListener("change", function () {
+
+            checkOut.min = checkIn.value || localToday;
+
+            if (checkOut.value &&
+                checkOut.value <= checkIn.value) {
+
+                checkOut.value = "";
+            }
+
+            error.textContent = "";
+        });
+
+
+        // Clear error when user changes checkout
+        checkOut.addEventListener("change", function () {
+            error.textContent = "";
+        });
+
+
+        // Submit validation
+        form.addEventListener("submit", function (event) {
+
+            error.textContent = "";
+
+            if (!checkIn.value || !checkOut.value) {
+                event.preventDefault();
+                error.textContent =
+                    "Please select your check-in and check-out dates.";
+                return;
+            }
+
+            if (checkIn.value < localToday) {
+                event.preventDefault();
+                error.textContent =
+                    "Check-in cannot be in the past.";
+                return;
+            }
+
+            if (checkOut.value <= checkIn.value) {
+                event.preventDefault();
+                error.textContent =
+                    "Check-out must be later than check-in.";
+                return;
+            }
+        });
+
+    });
+</script>
