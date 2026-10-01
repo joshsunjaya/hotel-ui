@@ -107,52 +107,211 @@ body {
         color: #222;
     }
 
-/* BOOKING */
+/* =========================================
+   HOME BOOKING BAR
+   ========================================= */
+
 .booking-wrapper {
     position: relative;
-    margin-top: -55px;
     z-index: 10;
+    margin-top: -45px;
+    padding: 0 20px;
 }
 
 .booking {
-    width: 1100px;
-    max-width: 92%;
-    margin: auto;
-    background: white;
-    box-shadow: 0 15px 45px rgba(0,0,0,.12);
-    padding: 25px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr) auto;
-    gap: 15px;
-    align-items: end;
-}
-
-.booking-item label {
-    display: block;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #777;
-    margin-bottom: 8px;
-}
-
-.booking-item input,
-.booking-item select {
     width: 100%;
-    padding: 13px;
-    border: 1px solid #ddd;
-    background: #fff;
-    font-size: 14px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 15px 45px rgba(31, 41, 51, 0.12);
+    border: 1px solid rgba(31, 41, 51, 0.06);
+}
+
+.booking-form {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: 92px;
+    padding: 0;
+}
+
+.booking-item {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 28px;
+}
+
+    .booking-item label {
+        display: block;
+        margin-bottom: 8px;
+        color: #8b7355;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
+    .booking-item input,
+    .booking-item select {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        outline: none;
+        background: transparent;
+        color: #1f2933;
+        font-family: inherit;
+        font-size: 0.92rem;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+        .booking-item input:focus,
+        .booking-item select:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .booking-item input::-webkit-calendar-picker-indicator {
+            opacity: 0.55;
+            cursor: pointer;
+        }
+
+    .booking-item select {
+        appearance: none;
+        -webkit-appearance: none;
+        padding-right: 22px;
+        background-image: linear-gradient(45deg, transparent 50%, #8b7355 50%), linear-gradient(135deg, #8b7355 50%, transparent 50%);
+        background-position: calc(100% - 8px) 50%, calc(100% - 3px) 50%;
+        background-size: 5px 5px, 5px 5px;
+        background-repeat: no-repeat;
+    }
+
+.booking-divider {
+    width: 1px;
+    height: 42px;
+    align-self: center;
+    background: rgba(31, 41, 51, 0.10);
 }
 
 .booking-button {
-    background: #252525;
-    color: white;
-    border: none;
-    padding: 14px 25px;
-    height: 46px;
-    cursor: pointer;
+    align-self: stretch;
+    min-width: 210px;
+    margin: 0;
+    padding: 0 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border: 0;
+    background: #1f2933;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.76rem;
     font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+    .booking-button span {
+        font-size: 1.05rem;
+        line-height: 1;
+        transition: transform 0.25s ease;
+    }
+
+    .booking-button:hover {
+        background: #8b7355;
+    }
+
+        .booking-button:hover span {
+            transform: translateX(4px);
+        }
+
+.booking-error {
+    position: absolute;
+    left: 28px;
+    bottom: -30px;
+    color: #b42318;
+    font-size: 0.78rem;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 991.98px) {
+
+    .booking-wrapper {
+        margin-top: -30px;
+        padding: 0 15px;
+    }
+
+    .booking-form {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .booking-item {
+        flex: 1 1 30%;
+        padding: 16px 18px;
+    }
+
+    .booking-divider {
+        display: none;
+    }
+
+    .booking-button {
+        flex: 1 1 100%;
+        min-height: 58px;
+        margin-top: 5px;
+    }
+
+    .booking-error {
+        position: static;
+        flex: 1 1 100%;
+        padding: 5px 8px 0;
+    }
+}
+
+
+@media (max-width: 575.98px) {
+
+    .booking-wrapper {
+        margin-top: -20px;
+        padding: 0 12px;
+    }
+
+    .booking {
+        box-shadow: 0 10px 30px rgba(31, 41, 51, 0.10);
+    }
+
+    .booking-form {
+        display: block;
+        padding: 8px;
+    }
+
+    .booking-item {
+        width: 100%;
+        padding: 16px 14px;
+        border-bottom: 1px solid rgba(31, 41, 51, 0.08);
+    }
+
+    .booking-button {
+        width: 100%;
+        min-height: 56px;
+        margin-top: 8px;
+    }
+
+    .booking-error {
+        padding: 8px 6px 4px;
+    }
 }
 
 /* INTRO */
@@ -2020,3 +2179,270 @@ RESPONSIVE
     .booking-search-summary span {
         font-size: 15px;
     }
+
+/* =========================================================
+HOTEL NAVBAR
+========================================================= */
+
+.hotel-header {
+    position: relative;
+    z-index: 1000;
+}
+
+.hotel-navbar {
+    min-height: 82px;
+    padding: 0;
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+    .hotel-navbar .container {
+        min-height: 82px;
+    }
+
+/* Logo */
+
+.hotel-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1;
+    text-decoration: none;
+    padding: 0;
+}
+
+.hotel-logo-main {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #1f2933;
+}
+
+.hotel-logo-sub {
+    margin-top: 7px;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.42em;
+    color: #8b7355;
+    padding-left: 2px;
+}
+
+/* Navigation */
+
+.hotel-nav {
+    gap: 8px;
+}
+
+.hotel-nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 82px;
+    padding: 0 15px !important;
+    color: #4b5563 !important;
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+    .hotel-nav-link::after {
+        content: "";
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        bottom: 22px;
+        height: 1px;
+        background: #8b7355;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.25s ease;
+    }
+
+.hotel-nav-link {
+    color: #1f2933 !important;
+}
+
+    .hotel-nav-link:hover::after {
+        transform: scaleX(1);
+    }
+
+/* Book Button */
+
+.nav-book {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+    background: #1f2933;
+    color: #ffffff !important;
+    border: 1px solid #1f2933;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-book {
+    background: #8b7355;
+    border-color: #8b7355;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.nav-book-arrow {
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.25s ease;
+}
+
+.nav-book .nav-book-arrow {
+    transform: translateX(4px);
+}
+
+/* Mobile */
+
+.hotel-navbar-toggler {
+    border: 0;
+    padding: 8px;
+    box-shadow: none !important;
+}
+
+.hotel-navbar-toggler {
+    box-shadow: none !important;
+}
+
+@media (max-width: 991.98px) {
+
+    .hotel-navbar {
+        min-height: 72px;
+    }
+
+        .hotel-navbar .container {
+            min-height: 72px;
+        }
+
+    .hotel-nav {
+        gap: 0;
+        padding: 18px 0 20px;
+    }
+
+    .hotel-nav-link {
+        height: auto;
+        padding: 11px 0 !important;
+    }
+
+        .hotel-nav-link::after {
+            display: none;
+        }
+
+    .nav-book {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hotel-logo-main {
+        font-size: 0.95rem;
+    }
+
+    .hotel-logo-sub {
+        font-size: 0.55rem;
+    }
+}
+
+/* =========================================================
+FOOTER
+========================================================= */
+
+.hotel-footer {
+    margin-top: 80px;
+    padding: 70px 0 25px;
+    background: #1f2933;
+    color: #ffffff;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 80px;
+    padding-bottom: 55px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-brand .section-label {
+    color: #b69a76;
+}
+
+.footer-brand h3 {
+    margin: 14px 0 18px;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.footer-brand p {
+    max-width: 430px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.8;
+}
+
+.footer-info {
+    padding-top: 4px;
+}
+
+.footer-info-label {
+    display: block;
+    margin-bottom: 18px;
+    color: #b69a76;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+}
+
+.footer-info strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.footer-info p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.9;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 22px;
+    color: rgba(255, 255, 255, 0.42);
+    font-size: 0.75rem;
+}
+
+@media (max-width: 767.98px) {
+
+    .hotel-footer {
+        margin-top: 50px;
+        padding: 55px 0 22px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer-brand h3 {
+        font-size: 1.65rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 6px;
+    }
+}

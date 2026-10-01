@@ -18,56 +18,89 @@
         </p>
 
         <div class="hero-buttons">
-            <a href="#" class="btn-primary">
+            <a asp-controller="Booking"
+               asp-action="Index"
+               class="btn-primary">
                 Book Your Stay
             </a>
 
-            <a href="#" class="btn-outline">
+            <a asp-controller="Room"
+               asp-action="Index"
+               class="btn-outline">
                 Explore Rooms
             </a>
         </div>
     </div>
 </section>
 
+
+<!-- BOOKING SEARCH -->
 <div class="booking-wrapper">
     <div class="booking">
 
-        <div class="booking-item">
-            <label>Check In</label>
-            <input type="date">
-        </div>
+        <form asp-controller="Booking"
+              asp-action="AvailableRooms"
+              method="get"
+              id="homeBookingForm"
+              class="booking-form">
 
-        <div class="booking-item">
-            <label>Check Out</label>
-            <input type="date">
-        </div>
+            <div class="booking-item">
+                <label for="homeCheckIn">
+                    Check In
+                </label>
 
-        <div class="booking-item">
-            <label>Guests</label>
-            <select>
-                <option>1 Guest</option>
-                <option>2 Guests</option>
-                <option>3 Guests</option>
-                <option>4 Guests</option>
-            </select>
-        </div>
+                <input type="date"
+                       id="homeCheckIn"
+                       name="checkIn"
+                       required />
+            </div>
 
-        <div class="booking-item">
-            <label>Room</label>
-            <select>
-                <option>Any Room</option>
-                <option>Standard</option>
-                <option>Deluxe</option>
-                <option>Suite</option>
-            </select>
-        </div>
+            <div class="booking-divider"></div>
 
-        <button class="booking-button">
-            Check Availability
-        </button>
+            <div class="booking-item">
+                <label for="homeCheckOut">
+                    Check Out
+                </label>
+
+                <input type="date"
+                       id="homeCheckOut"
+                       name="checkOut"
+                       required />
+            </div>
+
+            <div class="booking-divider"></div>
+
+            <div class="booking-item booking-guests">
+                <label for="homeGuests">
+                    Guests
+                </label>
+
+                <select id="homeGuests"
+                        name="guests">
+                    <option value="1">1 Guest</option>
+                    <option value="2" selected>2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                </select>
+            </div>
+
+            <button type="submit"
+                    class="booking-button">
+                Check Availability
+                <span>→</span>
+            </button>
+
+            <div id="homeBookingError"
+                 class="booking-error">
+            </div>
+
+        </form>
 
     </div>
 </div>
+
 
 <section class="intro">
     <div class="intro-image"></div>
@@ -93,11 +126,14 @@
             services are designed to make your stay memorable.
         </p>
 
-        <a href="#" class="read-more">
+        <a asp-controller="About"
+           asp-action="Index"
+           class="read-more">
             Discover Our Story →
         </a>
     </div>
 </section>
+
 
 <section class="rooms">
     <div class="rooms-header">
@@ -117,6 +153,7 @@
 
             <div class="room-content">
                 <h3>Standard Room</h3>
+
                 <p>
                     A comfortable space designed for a relaxing
                     and enjoyable stay.
@@ -128,11 +165,13 @@
             </div>
         </div>
 
+
         <div class="room-card">
             <div class="room-image room-deluxe"></div>
 
             <div class="room-content">
                 <h3>Deluxe Room</h3>
+
                 <p>
                     More space, more comfort, and a refined
                     atmosphere for your stay.
@@ -144,11 +183,13 @@
             </div>
         </div>
 
+
         <div class="room-card">
             <div class="room-image room-suite"></div>
 
             <div class="room-content">
                 <h3>Suite</h3>
+
                 <p>
                     An elevated experience with generous space
                     and premium comfort.
@@ -162,3 +203,84 @@
 
     </div>
 </section>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const checkIn = document.getElementById("homeCheckIn");
+        const checkOut = document.getElementById("homeCheckOut");
+        const form = document.getElementById("homeBookingForm");
+        const error = document.getElementById("homeBookingError");
+
+        const today = new Date();
+
+        const localToday = [
+            today.getFullYear(),
+            String(today.getMonth() + 1).padStart(2, "0"),
+            String(today.getDate()).padStart(2, "0")
+        ].join("-");
+
+        checkIn.min = localToday;
+        checkOut.min = localToday;
+
+
+        checkIn.addEventListener("change", function () {
+
+            if (!checkIn.value) {
+                checkOut.min = localToday;
+                return;
+            }
+
+            checkOut.min = checkIn.value;
+
+            if (
+                checkOut.value &&
+                checkOut.value <= checkIn.value
+            ) {
+                checkOut.value = "";
+            }
+
+            error.textContent = "";
+        });
+
+
+        checkOut.addEventListener("change", function () {
+            error.textContent = "";
+        });
+
+
+        form.addEventListener("submit", function (event) {
+
+            error.textContent = "";
+
+            if (!checkIn.value || !checkOut.value) {
+                event.preventDefault();
+
+                error.textContent =
+                    "Please select your check-in and check-out dates.";
+
+                return;
+            }
+
+            if (checkIn.value < localToday) {
+                event.preventDefault();
+
+                error.textContent =
+                    "Check-in cannot be in the past.";
+
+                return;
+            }
+
+            if (checkOut.value <= checkIn.value) {
+                event.preventDefault();
+
+                error.textContent =
+                    "Check-out must be later than check-in.";
+
+                return;
+            }
+        });
+
+    });
+</script>
