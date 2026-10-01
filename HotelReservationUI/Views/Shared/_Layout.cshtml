@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -11,31 +12,51 @@
 </head>
 
 <body>
+    <!-- Header -->
+    <header class="hotel-header">
 
-    <header>
         <nav class="navbar navbar-expand-lg hotel-navbar">
+
             <div class="container">
 
+                <!-- Logo -->
                 <a class="navbar-brand hotel-logo"
                    asp-controller="Home"
                    asp-action="Index">
-                    HOTEL NIAGARA
-                    <span>LAWANG</span>
+
+                    <span class="hotel-logo-main">
+                        HOTEL NIAGARA
+                    </span>
+
+                    <span class="hotel-logo-sub">
+                        LAWANG
+                    </span>
+
                 </a>
 
-                <button class="navbar-toggler"
+
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler hotel-navbar-toggler"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#mainNavbar">
+                        data-bs-target="#mainNavbar"
+                        aria-controls="mainNavbar"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
                     <span class="navbar-toggler-icon"></span>
+
                 </button>
 
-                <div class="collapse navbar-collapse" id="mainNavbar">
 
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse"
+                     id="mainNavbar">
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center hotel-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link"
+                            <a class="nav-link hotel-nav-link"
                                asp-controller="Home"
                                asp-action="Index">
                                 Home
@@ -43,7 +64,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link"
+                            <a class="nav-link hotel-nav-link"
                                asp-controller="Room"
                                asp-action="Index">
                                 Rooms
@@ -51,7 +72,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link"
+                            <a class="nav-link hotel-nav-link"
                                asp-controller="Facility"
                                asp-action="Index">
                                 Facilities
@@ -59,17 +80,27 @@
                         </li>
 
                         <li class="nav-item">
-                            <a asp-controller="About" asp-action="Index">
+                            <a class="nav-link hotel-nav-link"
+                               asp-controller="About"
+                               asp-action="Index">
                                 About
                             </a>
                         </li>
 
-                        <li class="nav-item ms-lg-3">
+                        <li class="nav-item ms-lg-4 mt-3 mt-lg-0">
+
                             <a class="nav-book"
                                asp-controller="Booking"
                                asp-action="Index">
-                                Book Now
+
+                                <span>Book Your Stay</span>
+
+                                <span class="nav-book-arrow">
+                                    →
+                                </span>
+
                             </a>
+
                         </li>
 
                     </ul>
@@ -77,15 +108,19 @@
                 </div>
 
             </div>
+
         </nav>
+
     </header>
 
 
+    <!-- Main -->
     <main>
         @RenderBody()
     </main>
 
 
+    <!-- Footer -->
     <footer class="hotel-footer">
 
         <div class="container">
@@ -94,26 +129,46 @@
 
                 <div class="footer-brand">
 
-                    <h3>Hotel Niagara Lawang</h3>
+                    <span class="section-label">
+                        HOTEL NIAGARA LAWANG
+                    </span>
+
+                    <h3>
+                        Stay. Relax.<br />
+                        Experience Lawang.
+                    </h3>
 
                     <p>
-                        Stay. Relax. Experience Lawang.
+                        A comfortable stay surrounded by
+                        the charm of Lawang, East Java.
                     </p>
 
                 </div>
 
+
                 <div class="footer-info">
 
-                    <strong>Hotel Niagara Lawang</strong><br />
-                    Lawang, East Java, Indonesia<br />
-                    +62341 426612<br />
-                    hotelniagara1@gmail.com
+                    <span class="footer-info-label">
+                        CONTACT
+                    </span>
+
+                    <strong>
+                        Hotel Niagara Lawang
+                    </strong>
+
+                    <p>
+                        Lawang, East Java, Indonesia<br />
+                        +62 341 426612<br />
+                        hotelniagara1@gmail.com
+                    </p>
 
                 </div>
 
             </div>
 
+
             <div class="footer-bottom">
+
                 <span>
                     © 2026 Hotel Niagara Lawang
                 </span>
@@ -121,6 +176,7 @@
                 <span>
                     All rights reserved.
                 </span>
+
             </div>
 
         </div>
@@ -128,6 +184,7 @@
     </footer>
 
 
+    <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
